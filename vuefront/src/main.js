@@ -11,12 +11,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'mdbvue/build/css/mdb.css'
 
 
-
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(VueResource)
 Vue.use(BootstrapVue)
+
+// app.use(cors())
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -24,9 +25,6 @@ Vue.use(VueGoogleMaps, {
   }
 })
 
-Vue.config.productionTip = false
-
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,

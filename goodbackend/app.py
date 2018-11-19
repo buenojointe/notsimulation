@@ -21,6 +21,7 @@ app = Flask(__name__)
 FlaskJSON(app)
 CORS(app)
 
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def debuild(incomingConfig):
     out={}

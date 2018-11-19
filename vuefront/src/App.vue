@@ -1,15 +1,7 @@
 <template>
-
-
   <div class="flexible-content">
-
-
-
     <div class="sidebar-fixed position-fixed">
       <a class="logo-wrapper"><img alt="" class="img-fluid" src="./assets/logo-mdb-vue-small.png"/></a>
-      
-      
-
       <list-group class="list-group-flush">
         <router-link to="/startnew" @click.native="activeItem = 1">
           <list-group-item :action="true" :class="activeItem === 1 && 'active'"><fa icon="pie-chart" class="mr-3"/>Start New Sim</list-group-item>
@@ -24,9 +16,11 @@
     </div>
     <main>
       <div class="mt-5 p-5">
+
         <transition name="fade" mode="out-in" appear>
         <router-view></router-view>
         </transition>
+        
       </div>
       <ftr color="primary-color-dark" class="text-center font-small darken-2">
         <div class="pt-4">
