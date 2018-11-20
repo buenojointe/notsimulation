@@ -28,8 +28,8 @@ ENTRYPOINT ./entrypoint.sh
 
 # docker load -i dockedSimulation.docker
 # docker save -o dockedSimulation.docker simulation
-# docker run --rm -ti -v C:/Users/Zeus/Desktop/saveddata:/simulation/backend/saveddata --name simulation -p 80:80 simulation
-# docker run --rm -ti -v /opt/saveddata:/simulation/backend/saveddata --name simulation -p 80:80 simulation
+# docker run --rm -ti -v C:/Users/Zeus/Desktop/saveddata:/simulation/goodbackend/saveddata --name simulation -p 80:80 simulation
+# docker run --rm -ti -v /opt/saveddata:/simulation/goodbackend/saveddata --name simulation -p 80:80 simulation
 # docker build -t simulation -f Dockerfile .
 # docker build -t test -f Dockerfile .
 # docker run --rm -ti -v /Users/jobraf/Desktop/saveddata:/simulation/backend/saveddata --name simulation -p 80:80 test

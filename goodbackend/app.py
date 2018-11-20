@@ -15,12 +15,12 @@ import csv
 import shutil
 from model import Model
 
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 
 app = Flask(__name__)
 FlaskJSON(app)
-CORS(app)
 
+cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 def debuild(incomingConfig):
@@ -38,7 +38,7 @@ def debuild(incomingConfig):
     return out
 
 @app.route('/api/datarequest/',methods=['GET','POST'])
-
+@cross_origin()
 def datarequest():
 
     argument=request.args.get('filename')
@@ -52,6 +52,7 @@ def datarequest():
     return json_response(response=data)
 
 @app.route('/api/delete',methods=['GET','POST'])
+@cross_origin()
 def delete():
 	toDelete=request.json['simName']
 	shutil.rmtree('saveddata/'+toDelete)
@@ -60,7 +61,7 @@ def delete():
 
 
 @app.route('/api/rename',methods=['GET','POST'])
-
+@cross_origin()
 def rename():
 	toRename=request.json['simName']
 	return json_response(response={'foo':'bar'})
@@ -68,7 +69,7 @@ def rename():
 
 
 @app.route('/api/newSimThread',methods=['GET','POST'])
-
+@cross_origin()
 def newSimThread():
     incomingConfig=debuild(request.json['incomingConfig'])
     model=Model(incomingConfig)
@@ -77,7 +78,7 @@ def newSimThread():
 
 
 @app.route('/api/folderCache',methods=['GET','POST'])
-
+@cross_origin()
 def folderCache():
 
     def readstatus(simName):
@@ -123,5 +124,5 @@ def folderCache():
         print('decoder error')
         newfiles=[]
 
-if __name__=="__main__":
-	app.run(host='127.0.0.1')
+# if __name__=="__main__":
+	# app.run(host='127.0.0.1:5000')

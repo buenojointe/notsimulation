@@ -3,7 +3,7 @@
 cd /simulation/goodbackend
 
 ## dev serv
-#python3 app.py &
+# python3 app.py &
 
 ## guni prod flask
 # python3 wsgi.py &

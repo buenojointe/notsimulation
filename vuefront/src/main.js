@@ -17,8 +17,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(VueResource)
 Vue.use(BootstrapVue)
 
-// app.use(cors())
-
 Vue.use(VueGoogleMaps, {
   load: {
     libraries: 'places'

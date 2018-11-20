@@ -51,6 +51,9 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
 
     /**
      * Source Maps
